@@ -70,7 +70,7 @@ if [ "$UNSIGNED" = "1" ]; then
     echo "⚠️  --unsigned：ad-hoc 签名（CI/预览通道，TCC 授权不跨版本存活）"
     codesign --force --identifier "$BUNDLE_ID" --sign - "$APP"
 else
-    echo "-- 签名（证书: $CERT_CN, identifier: $BUNDLE_ID）"
+    echo "-- 签名（证书: $CERT_CN, identifier: ${BUNDLE_ID}）"
     codesign --force \
         --identifier "$BUNDLE_ID" \
         --sign "$CERT_CN" \
